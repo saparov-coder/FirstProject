@@ -1,0 +1,27 @@
+namespace homework1;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Word :");
+        var text = Console.ReadLine();
+        
+        var mainResult = middleThree(text);
+        Console.WriteLine($"Result : {mainResult}");
+        Main(args);
+    }
+
+    public static string middleThree(string word)
+    {
+        var countWord = (word.Length - 3) / 2;
+        if(word.Length >= 3)
+        {
+            return word.Substring(countWord, 3);
+        }
+        else
+        {
+            return "Word is very small!";
+        }
+    }
+}
