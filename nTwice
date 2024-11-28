@@ -1,0 +1,31 @@
+namespace homework1;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Word :");
+        var text = Console.ReadLine();
+        Console.Write("Number : ");
+        var number = int.Parse(Console.ReadLine());
+
+        var mainResult = nTwice(text, number);
+        Console.WriteLine($"Result : {mainResult}");
+        Main(args);
+    }
+
+    public static string nTwice(string word, int number1)
+    {
+        var result = string.Empty;
+        if(word.Length > number1)
+        {
+            result += word.Substring(0, number1);
+            result += word.Remove(0, word.Length - number1);
+        }
+        else
+        {
+            return "Kichikroq Son kiriting!";
+        }
+        return result;
+    }
+}
